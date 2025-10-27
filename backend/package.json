@@ -1,13 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "A simple To-Do CRUD API for the YourDOST assignment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "description": ""
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

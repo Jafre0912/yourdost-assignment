@@ -1,25 +1,43 @@
-# Part 1: DSA - Second Largest Unique Number
+Note1: I have already solved a similar problem recently on GeeksforGeeks here:
+-> https://www.geeksforgeeks.org/problems/second-largest3735/1
 
-## Problem
-Given an array of integers, return the **second largest unique number** in the array. If it doesn’t exist, return -1.
+Note2: if array is null or it's lenght is less then 2 then return -1;
 
-## Approach
-My approach to solving this problem is as follows:
 
-1.  **Handle Uniqueness:** I first create a `Set` from the input array. This automatically removes all duplicate numbers, leaving only unique elements.
-2.  **Convert and Sort:** I convert the `Set` back into an array and then sort this array in descending order (from largest to smallest).
-3.  **Find Second Largest:**
-    * If the sorted array of unique numbers has two or more elements, the second largest number will be at index 1.
-    * If the array has fewer than two elements (meaning there was 0 or 1 unique number), then a second largest number does not exist, and I return -1 as per the requirement.
+Here's my Approach:
+1)Created two variables — largest and secondLargest, both set to very small values(Long.MIN_VALUE).
+then went through each element in the array:
+2)If the number is greater than largest, update secondLargest = largest and made largest = number.
+3)Else if the number is smaller than largest but greater than secondLargest, update secondLargest = number.
+4)After checking all numbers, if secondLargest was never updated then return -1.
 
-## Complexity
-* **Time Complexity:** $O(N \log N)$
-    * Creating the `Set` is $O(N)$.
-    * Sorting the unique numbers is $O(K \log K)$, where $K$ is the number of unique elements ($K \le N$).
-    * In the worst case, all $N$ elements are unique, making the dominant operation the sort, which is $O(N \log N)$. This is better than the required $O(N^2)$.
-* **Space Complexity:** $O(K)$ or $O(N)$ in the worst case, to store the unique elements in the `Set` and the new array.
 
-## How to Run
-You can run this solution using Node.js:
-```bash
-node solution.js
+Complexity:
+Time: O(N) because only one loop.
+Space: O(1) because uses constant(no) extra space.
+
+
+Run Command:
+javac Solution.java
+java Solution
+
+
+O/P Sample:
+Input: [1, 2, 3, 4, 5]
+Output: 4
+
+Input: [10]
+Output: -1
+
+Input: []
+
+Input: [1, 2, 3, 4, 5]
+Output: 4
+
+Input: [10]
+Output: -1
+
+Input: []
+Input: []
+Output: -1
+PS C:\jafar\yourdost-assignment\DSA>
